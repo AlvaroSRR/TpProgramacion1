@@ -1,3 +1,4 @@
+import time
 
 salir = False           #defino variable Boleana para while de menu
 while salir==False:     #mientras "salir" sea "False", va a repetir
@@ -64,3 +65,4 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                         jugar = False
 
 print("Gracias por Jugar")
+time.sleep(3)       #retraso de 3 segundos
