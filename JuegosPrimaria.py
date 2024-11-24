@@ -4,9 +4,9 @@ salir = False           #defino variable Boleana para while de menu
 while salir==False:     #mientras "salir" sea "False", va a repetir
 
     print("======================================")
-    print("     Bienvenido a Aprender Jugando")
+    print("    4 en 1     ")
     print("======================================")
-    print("1- Luana\n2- Nano\n3- David\n4- Alvaro\n5- Maicol\n6- Camila\n9- Salir")
+    print("1- Luana\n2- Nano\n3- David\n4- Alvaro\n9- Salir")
     numJuego= int(input("Ingresa la opción de juego: "))
 
     if numJuego == 9:   #control de numero ingresado
@@ -43,26 +43,10 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
             case 4:             #si el contenido es 4
                 while jugar:    #mientras "jugar" sea "True", va a repetir
                     #código Alvaro
-                    print("Alvaro")
-                    opcionRespuesta=int(input("9- Volver al menú"))
+                    opcionRespuesta=input(f"Salir- Volver al menú")
                     if opcionRespuesta == 9: #control de opcion ingresada
                         jugar = False
 
-            case 5:             #si el contenido es 5
-                while jugar:    #mientras "jugar" sea "True", va a repetir
-                    #código Maicol
-                    print("Maicol")
-                    opcionRespuesta=int(input("9- Volver al menú"))
-                    if opcionRespuesta == 9: #control de opcion ingresada
-                        jugar = False
-
-            case 6:             #si el contenido es 6
-                while jugar:    #mientras "jugar" sea "True", va a repetir
-                    #código Camila
-                    print("Camila")
-                    opcionRespuesta=int(input("9- Volver al menú"))
-                    if opcionRespuesta == 9: #control de opcion ingresada
-                        jugar = False
 
 print("Gracias por Jugar")
 time.sleep(3)       #retraso de 3 segundos
