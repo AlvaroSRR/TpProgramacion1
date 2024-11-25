@@ -2,11 +2,8 @@ import time
 import random
 from random import randint
 
-
-
 salir = False           #defino variable Boleana para while de menu
 while salir==False:     #mientras "salir" sea "False", va a repetir
-
     print("======================================")
     print("    4 en 1     ")
     print("======================================")
@@ -23,36 +20,34 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
             case 1:             #si el contenido es 1
                 while jugar:    #mientras "jugar" sea "True", va a repetir
                     #código Luana
-                    print("Luana")
-
                     def busqueda_tesoro(tablero, fila_tesoro, columna_tesoro):
                         intentos = 0
                         encontrado = False
                         #Bucle mientras no se haya encontrado el tesoro
                         while encontrado == False:
-                            for i in range(5): 
+                            for i in range(5):
                                 for j in range(5):
-                                    if tablero[i][j] == "⬜":  
+                                    if tablero[i][j] == "⬜":
                                         print("⬜", end=" ")
-                                    elif tablero[i][j] == "❌": 
+                                    elif tablero[i][j] == "❌":
                                         print("❌", end=" ")
-                                    elif tablero[i][j] == "💎": 
+                                    elif tablero[i][j] == "💎":
                                         print("💎", end=" ")
                                     else:
-                                        print(" ", end=" ")  
-                                print()  
-                            
+                                        print(" ", end=" ")
+                                print()
+
                             #Validación de ingreso de n° de filas
                             fila = -1
                             while not (0 <= fila < 5):
-                                fila = int(input("Ingrese el número de fila (1-5): ")) - 1  
+                                fila = int(input("Ingrese el número de fila (1-5): ")) - 1
                                 if not (0 <= fila < 5):
                                     print("ERROR! Ingrese un número entre 1 y 5")
 
                             #Validación de ingreso de n° de columnas
                             columna = -1
                             while not (0 <= columna < 5):
-                                columna = int(input("Ingrese el número de columna (1-5): ")) - 1  
+                                columna = int(input("Ingrese el número de columna (1-5): ")) - 1
                                 if not (0 <= columna < 5):
                                     print("ERROR! Ingrese un número entre 1 y 5")
 
@@ -61,28 +56,28 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                                 tablero[fila][columna] = "💎"
                                 print("\n¡Encontraste el tesoro! ¡¡¡GANASTE!!!")
                                 #Mostramos el tablero con el tesoro
-                                for i in range(5): 
+                                for i in range(5):
                                     for j in range(5):
-                                        if tablero[i][j] == "⬜":  
+                                        if tablero[i][j] == "⬜":
                                             print("⬜", end=" ")
-                                        elif tablero[i][j] == "❌": 
+                                        elif tablero[i][j] == "❌":
                                             print("❌", end=" ")
-                                        elif tablero[i][j] == "💎": 
+                                        elif tablero[i][j] == "💎":
                                             print("💎", end=" ")
                                         else:
-                                            print(" ", end=" ")  
-                                    print() 
+                                            print(" ", end=" ")
+                                    print()
                                 #Finalizamos el juego con tesoro encontrado
                                 encontrado = True
                             else:
                                 #Marcamos x el lugar como un intento fallido
                                 if tablero[fila][columna] != "💎" and tablero[fila][columna] != "❌":
                                     tablero[fila][columna] = "❌"
-                                
+
                                 intentos += 1
                                 print(f"\nNo está ahí el tesoro. Intento {intentos}/5")
 
-                                #Intentos llega a 5, pierde y termina 
+                                #Intentos llega a 5, pierde y termina
                                 if intentos >= 5:
                                     print(f"\nPerdiste! El tesoro estaba en la posición ({fila_tesoro + 1}, {columna_tesoro + 1})")
                                     break
@@ -110,7 +105,6 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
             case 2:             #si el contenido es 2
                 while jugar:    #mientras "jugar" sea "True", va a repetir
                     #código Nano
-                    print("Nano")
                     # Generamos el nombre del jugador y el nombre del robot.
                     nombre_jugador = input("Ingresar nombre del jugador: ").upper()
                     año_nacimiento = int(input("Ingresar año de nacimiento: "))
@@ -139,7 +133,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                             if vida_enemigo <= 0:
                                 print(f"{enemigo} DERROTADO")
                                 break
-                            
+
                             # Calculamos el daño del enemigo
                             daño_enemigo = max(0, ataque_enemigo - personaje['defensa'])
                             personaje['vida'] -= daño_enemigo
@@ -147,7 +141,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                             if personaje['vida'] <= 0:
                                 print("¡Los escudos colapsan! ¡El enemigo te ha derrotado!")
                                 return False
-                            
+
                         # Calculo de puntaje
                         puntuaciones.append([personaje['nombre'], daño_total])
                         return True
@@ -176,7 +170,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                                 print("No encuentras enemigos pero descubres armamento enemigo abandonado.")
                                 print("Encuentras una batería más potente para tus escudos. Tu capacidad de defensa aumenta.")
                                 personaje['defensa'] += 5
-                        
+
                         elif opcion == 2:
                             print("\nTe diriges a la nave enemiga.")
                             print("¡Te encuentras de frente con el comandante enemigo!")
@@ -185,7 +179,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                             if juego:
                                 print("¡Derrotaste al comandante enemigo, las tropas hostiles se retiran!")
                                 juego = False
-                        
+
                         elif opcion == 3:
                             print("\nBuscas armamento en el arsenal.")
                             if random.choice([True, False]):
@@ -221,23 +215,23 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                                     personaje['ataque'] += 5
                             else:
                                 print("Los exploradores enemigos te detectan y escapan.")
-                        
+
                         elif opcion == 6:
                             print("\nEstadísticas del mecha:")
                             print(f"Nombre del Mecha: {personaje['mecha']}")
                             print(f"Vida: {personaje['vida']}")
                             print(f"Ataque: {personaje['ataque']}")
                             print(f"Defensa: {personaje['defensa']}")
-                        
-                        elif opcion == 7: 
-                            print("\nPuntuacion del jugador:") 
-                            for puntuacion in puntuaciones: 
+
+                        elif opcion == 7:
+                            print("\nPuntuacion del jugador:")
+                            for puntuacion in puntuaciones:
                                 print(f"Nombre: {puntuacion[0]}, Puntos: {puntuacion[1]}")
                         else:
                             print("Opción no válida. Intenta de nuevo.")
 
-                    # Puntuación al final 
-                    print("\nPuntuacion final") 
+                    # Puntuación al final
+                    print("\nPuntuacion final")
                     total_puntos = sum(puntuacion[1] for puntuacion in puntuaciones)
                     print(f"Jugador: {personaje['nombre']}, Puntos totales: {total_puntos}")
 
@@ -249,11 +243,6 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
             case 3:             #si el contenido es 3
                 while jugar:    #mientras "jugar" sea "True", va a repetir
                     #código David
-                    print("David")
-                    import random
-                    import time
-
-
                     def JuegoDavidH():
                         print("Bienvenido al juego de adivinanzas, Dont Take The Clues ")
                         time.sleep(3)
@@ -349,7 +338,6 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                         if intentos == 0:
                             print("Intentos acabados, puedes volver a intentarlo")
 
-
                     def JuegoDavidE():
                         print("Bienvenido al juego de adivinanzas")
                         time.sleep(3)
@@ -440,7 +428,6 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
 
                         if intentos == 0:
                             print("Intentos acabados, puedes volver a intentarlo")
-
 
                     dificultad = input(
                         "Elija dificultad: 1_Modo Facil 2_Modo Hardcore: ")  # Preguntar el modo que desea jugar el usuario
@@ -604,8 +591,6 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                         time.sleep(2)
                     juegoAlvaro()
                     jugar = False
-
-
 
 print("Gracias por Jugar")
 time.sleep(2)       #retraso de 2 segundos
