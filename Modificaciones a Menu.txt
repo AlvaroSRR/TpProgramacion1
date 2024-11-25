@@ -1,2 +1,5 @@
-Arreglar condiciones para volver al menu principal o jugar de nuevo
-Poner juegos como funciones ?
+Menu Listo
+Todo funcionando
+
+Para que quede mas ordenado, poner todos los juegos como funciones al principio, y llamar las funciones segun corresponda,
+asi queda mas ordenado el codigo.
