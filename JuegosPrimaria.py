@@ -103,8 +103,8 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                     #Llamamos función para iniciar el juego
                     busqueda_tesoro(tablero, fila_tesoro, columna_tesoro)
 
-                    opcionRespuesta=int(input("9- Volver al menú: "))
-                    if opcionRespuesta ==9:  #control de opcion ingresada
+                    opcionRespuesta=input("9- Volver al menú, ENTER para jugar de nuevo: ")
+                    if opcionRespuesta =="9":  #control de opcion ingresada
                         jugar=False
 
             case 2:             #si el contenido es 2
@@ -242,16 +242,214 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                     print(f"Jugador: {personaje['nombre']}, Puntos totales: {total_puntos}")
 
                     print("El juego ha terminado.")
-                    opcionRespuesta=int(input("9- Volver al menú: "))
-                    if opcionRespuesta ==9:  #control de opcion ingresada
+                    opcionRespuesta=input("9- Volver al menú, ENTER para jugar de nuevo: ")
+                    if opcionRespuesta =="9":  #control de opcion ingresada
                         jugar=False
 
             case 3:             #si el contenido es 3
                 while jugar:    #mientras "jugar" sea "True", va a repetir
                     #código David
                     print("David")
-                    opcionRespuesta=int(input("9- Volver al menú: "))
-                    if opcionRespuesta ==9:  #control de opcion ingresada
+                    import random
+                    import time
+
+
+                    def JuegoDavidH():
+                        print("Bienvenido al juego de adivinanzas, Dont Take The Clues ")
+                        time.sleep(3)
+                        print(
+                            "El juego consiste en adivinar la palabra, tienes 5 intentos, buena suerte y recuerda Dont Take The Clues")
+                        time.sleep(3)
+                        print("Empezamos en...")
+                        time.sleep(2)
+                        print("3..")
+                        time.sleep(2)
+                        print("2..")
+                        time.sleep(2)
+                        print("1..")
+                        time.sleep(2)
+
+                        palabras = ["EXTRAORDINARIO", "HEMEROTECA", "EPIDEMIOLOGIA", "PSIQUIATRICO", "CRONOLOGIA",
+                                    "HIPOPOTOMONSTROSESQUIPEDALIOFOBIA", "ANISOTROPIA"]
+
+                        palabra = random.choice(palabras)
+                        estado_palabra = []
+                        adivinanzas = [
+                            "En el lienzo del tiempo se despliega con destellos efímeros, pintando el cielo nocturno con promesas lejanas. Es el eco lumínico de la eternidad, cuya canción se escucha en silencio.",
+                            "Custodio incansable de los secretos de la tierra, su murmullo incita sueños en los corazones inquietos. Con sus aguas profundas y su danza eterna, guarda misterios que solo el valiente osa descubrir.",
+                            "Es la fuerza imperceptible que guía el curso de las vidas, invisible a los ojos, pero sentida en el alma. Es el arquitecto del destino, trazando caminos en el vasto mapa del universo.",
+                            "En la quietud de su refugio, tejió una red de esperanzas y deseos. Con paciencia infinita, observa el mundo pasar, atrapando en su abrazo los sueños fugaces de quienes se atreven a soñar.",
+                            "Es el escultor del espacio, que con manos invisibles moldea la luz y la sombra. Aunque intangible, su obra es omnipresente, definiendo la existencia con cada gesto imperceptible."
+                            ]
+
+                        respuestas_adivinanzas = ["ESTRELLA", "OCEANO", "DESTINO", "NOCHE", "GRAVEDAD"]
+
+                        for i in palabra:
+                            estado_palabra.append("_")
+
+                        intentos = 5
+
+                        while intentos > 0:
+                            if "_" not in estado_palabra:
+                                print(f"Enhorabuena adivinaste la palabra {palabra}")
+                                break
+
+                            letra = input("Ingrese una letra: ").upper()
+                            if letra in palabra:
+
+                                for posicion, letra_palabra in enumerate(palabra):
+                                    if letra_palabra == letra:
+                                        estado_palabra[posicion] = letra
+                            else:
+                                print("letra incorrecta")
+                                intentos -= 1
+                                aux = True  # modi
+                                while aux:  # modi
+                                    # pista como str
+                                    pista = input(
+                                        "Ingrese 1 para obtener una pista o presione cualquier otro tecla para rechazar: ")
+                                    if pista == "1":  # control como str
+                                        print(
+                                            "Veo que necesitas una ayuda, si resuelves la siguiente adivinanza seras recompensado con una pista de lo contrario el juego continua:")
+                                        time.sleep(3)
+                                        random_adivinanza = random.randint(0, len(adivinanzas) - 1)
+                                        print(adivinanzas[random_adivinanza])
+
+                                        respuesta = input("Ingrese la respueta: ").upper()
+                                        if respuesta == respuestas_adivinanzas[random_adivinanza]:
+                                            if palabra == "EXTRAORDINARIO":
+                                                print(
+                                                    "Felicidades esta es la pista sobre la palabra a adivinar: Es el solitario caminante en el sendero de lo cotidiano, que ilumina con su presencia lo mundano, transformando lo ordinario en asombro. Es el artista del universo, cuya obra maestra no se encuentra en lo común, sino en lo singular y excepcional, desafiando siempre los límites de la imaginación. ")
+                                            elif palabra == "HEMEROTECA":
+                                                print(
+                                                    "Felicidades esta es la pista sobre la palabra a adivinar: Es el guardián de los ecos del pasado, donde las voces del tiempo se archivan y los susurros del ayer encuentran refugio. Este santuario de hojas y tinta preserva las memorias de lo transitorio, convirtiendo cada página en un testamento de la historia humana, esperando ser redescubierta por los curiosos del presente. ")
+                                            elif palabra == "EPIDEMIOLOGIA":
+                                                print(
+                                                    "Felicidades esta es la pista sobre la palabra a adivinar: Es el faro en la tormenta, el cartógrafo de lo invisible que traza mapas de la salud y la enfermedad en el vasto océano de la humanidad. Con su mirada perspicaz, descifra patrones ocultos y desvela la danza de los microbios y humanos, tejiendo la red de causas y consecuencias que nos unen en el ciclo interminable de la vida. ")
+                                            elif palabra == "PSIQUIATRICO":
+                                                print(
+                                                    "Felicidades esta es la pista sobre la palabra a adivinar: Es el refugio de las mentes inquietas, el bastión donde los pensamientos errantes encuentran su camino. En sus recintos, las tormentas del alma se enfrentan con la sabiduría serena, y los laberintos internos son desentrañados con delicadeza. Es el lugar donde el silencio se convierte en diálogo y el caos interior se transforma en armonía.")
+                                            elif palabra == "CRONOLOGIA":
+                                                print(
+                                                    "Felicidades esta es la pista sobre la palabra a adivinar: Es el hilandero invisible que teje la tela del tiempo, marcando cada punto en el vasto tapiz de la existencia. Con precisión meticulosa, narra la historia del universo desde su nacimiento hasta el presente, ordenando los eventos en un desfile inmutable. En sus manos, los momentos se convierten en eslabones de una cadena eterna, conectando el pasado, el presente y el futuro en una sinfonía temporal.")
+                                            elif palabra == "HIPOPOTOMONSTROSESQUIPEDALIOFOBIA":
+                                                print(
+                                                    "Felicidades esta es la sobre la palabra a adivinar: Es el monstruo escondido en las sombras del léxico, un titán de sílabas que se erige como un coloso imponente en el paisaje de la lengua. Con cada letra, susurra temores y ansiedades a quienes se acercan, despertando el pavor en aquellos que enfrentan sus largos tentáculos fonéticos. En su corazón, reside el miedo no solo a su propia extensión, sino a la vastedad y complejidad que representa.")
+                                            elif palabra == "ANISOTROPIA":
+                                                print("Felicidades esta es la pista sobre la palabra a adivinar: ")
+                                        else:
+                                            print("Respuesta incorrecta, el juego continua")
+                                            time.sleep(2)
+                                            # aux = False #cambio variable
+                                    # if pista == "1": #controla pista como str
+                                    aux = False  # cambio variable
+
+                            print("Palabra: ", estado_palabra)
+
+                        if intentos == 0:
+                            print("Intentos acabados, puedes volver a intentarlo")
+
+
+                    def JuegoDavidE():
+                        print("Bienvenido al juego de adivinanzas")
+                        time.sleep(3)
+                        print("El juego consiste en adivinar la palabra, tienes 5 intentos, buena suerte")
+                        time.sleep(3)
+                        print("Empezamos en...")
+                        time.sleep(2)
+                        print("3..")
+                        time.sleep(2)
+                        print("2..")
+                        time.sleep(2)
+                        print("1..")
+                        time.sleep(2)
+
+                        palabras = ["EXTRAORDINARIO", "HEMEROTECA", "EPIDEMIOLOGIA", "PSIQUIATRICO",
+                                    "CRONOLOGIA"]  # Crea una lista con las palabras que tiene que adivinar
+
+                        palabra = random.choice(palabras)  # La palabra va a ser cualquier de la lsita
+                        estado_palabra = []  # Lista vacia que va a contener la palabra
+                        adivinanzas = [
+                            "Brilla en la noche y guía a los viajeros. Es una",
+                            "Ocupa gran parte del planeta, azul y profundo. Es el",
+                            "Destino inevitable que todos compartimos. Es el",
+                            "Es oscura y aparece al final del dia. Es la",
+                            "Fuerza que nos mantiene pegados al suelo. Es la"
+                        ]  # Adivinanzas que son partes del juego
+
+                        respuestas_adivinanzas = ["ESTRELLA", "OCEANO", "DESTINO", "NOCHE",
+                                                  "GRAVEDAD"]  # Respuesta de adivinanzas
+
+                        for i in palabra:
+                            estado_palabra.append(
+                                "_")  # Agrega un espacio despendiendo la cantidad de posciones que tiene la palabra
+
+                        intentos = 5  # Numero de intentos que tiene el jugador
+
+                        while intentos > 0:  # Verifica intentos y que todos los _ esten ocupados por una letra
+                            if "_" not in estado_palabra:
+                                print(f"Enhorabuena, adivinaste la palabra {palabra}")
+                                break
+
+                            letra = input("Ingrese una letra: ").upper()
+
+                            if letra in palabra:  # Si la letra ingresada esta en la palabra ocupara el espacio
+                                for posicion, letra_palabra in enumerate(palabra):
+                                    if letra_palabra == letra:
+                                        estado_palabra[posicion] = letra
+                            else:
+                                print("Letra incorrecta")
+                                intentos -= 1
+                                aux = True  # Variable auxiliar para controlar el bucle
+                                while aux:
+                                    pista = input(
+                                        "Ingrese 1 para obtener una pista sencilla o presione cualquier otro tecla para rechazar: ")
+                                    if pista == "1":  # control como str
+                                        print(
+                                            "Veo que necesitas una ayuda, si resuelves la siguiente adivinanza seras recompensado con una pista de lo contrario el juego continua:")
+                                        time.sleep(3)
+                                        random_adivinanza = random.randint(0,
+                                                                           len(adivinanzas) - 1)  # Elige una adivinanza al azar y al usar el mismo indice que la lista de respuesta verifica
+                                        print(adivinanzas[random_adivinanza])
+
+                                        respuesta = input("Ingrese la respueta: ").upper()
+                                        if respuesta == respuestas_adivinanzas[random_adivinanza]:
+                                            if palabra == "EXTRAORDINARIO":
+                                                print(
+                                                    "Felicidades esta es la simple pista sobre la palabra a adivinar: Es algo que no es común ni ordinario, sobresale por su calidad. ")
+                                            elif palabra == "HEMEROTECA":
+                                                print(
+                                                    "Felicidades esta es la simple pista sobre la palabra a adivinar: Es un lugar donde se guardan periódicos y revistas antiguos.. ")
+                                            elif palabra == "EPIDEMIOLOGIA":
+                                                print(
+                                                    "Felicidades esta es la simple pista sobre la palabra a adivinar: Es la ciencia que estudia las enfermedades y cómo se propagan en las poblaciones. ")
+                                            elif palabra == "PSIQUIATRICO":
+                                                print(
+                                                    "Felicidades esta es la simple pista sobre la palabra a adivinar: Se refiere a un lugar o tratamiento relacionado con la salud mental..")
+                                            elif palabra == "CRONOLOGIA":
+                                                print(
+                                                    "Felicidades esta el la simple pista sobre la palabra a adivinar: Se refiere a un lugar o tratamiento relacionado con la salud mental..")
+
+                                        else:
+                                            print("Respuesta incorrecta, el juego continua")
+                                            time.sleep(2)
+
+                                    aux = False  # cambio variable
+
+                            print("Palabra:", estado_palabra)
+
+                        if intentos == 0:
+                            print("Intentos acabados, puedes volver a intentarlo")
+
+
+                    dificultad = input(
+                        "Elija dificultad: 1_Modo Facil 2_Modo Hardcore: ")  # Preguntar el modo que desea jugar el usuario
+                    if dificultad == "1":
+                        JuegoDavidE()
+                    else:
+                        JuegoDavidH()
+                    opcionRespuesta=input("9- Volver al menú, ENTER para jugar de nuevo: ")
+                    if opcionRespuesta =="9":  #control de opcion ingresada
                         jugar=False
 
             case 4:             #si el contenido es 4
