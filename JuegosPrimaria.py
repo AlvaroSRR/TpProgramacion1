@@ -7,7 +7,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
     print("======================================")
     print("    4 en 1     ")
     print("======================================")
-    print("1- Luana\n2- Nano\n3- David\n4- Alvaro\n9- Salir")
+    print("1- BUSQUEDA DEL TESORO\n2- ELIGE TU PROPIA AVENTURA\n3- ADIviNANZAS\n4- BATALLA NAVAL\n9- Salir".upper())
     numJuego= int(input("Ingresa la opción de juego: "))
 
     if numJuego == 9:   #control de numero ingresado
@@ -432,7 +432,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
 
                         if intentos == 0:
                             print("Intentos acabados, puedes volver a intentarlo")
-
+                    print ("ADIVINANZAS\n")
                     dificultad = input(
                         "Elija dificultad: 1_Modo Facil 2_Modo Hardcore: ")  # Preguntar el modo que desea jugar el usuario
                     if dificultad == "1":
