@@ -364,7 +364,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                         adivinanzas = [
                             "Brilla en la noche y guía a los viajeros. Es una",
                             "Ocupa gran parte del planeta, azul y profundo. Es el",
-                            "Destino inevitable que todos compartimos. Es el",
+                            "Es el camino inevitable que todos recorremos en la vida, a veces desconocido y misterioso, marcado por eventos que parecen estar predeterminados.",
                             "Es oscura y aparece al final del dia. Es la",
                             "Fuerza que nos mantiene pegados al suelo. Es la"
                         ]  # Adivinanzas que son partes del juego
