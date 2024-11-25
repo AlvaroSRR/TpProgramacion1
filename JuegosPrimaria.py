@@ -325,7 +325,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                                                 print(
                                                     "Felicidades esta es la sobre la palabra a adivinar: Es el monstruo escondido en las sombras del léxico, un titán de sílabas que se erige como un coloso imponente en el paisaje de la lengua. Con cada letra, susurra temores y ansiedades a quienes se acercan, despertando el pavor en aquellos que enfrentan sus largos tentáculos fonéticos. En su corazón, reside el miedo no solo a su propia extensión, sino a la vastedad y complejidad que representa.")
                                             elif palabra == "ANISOTROPIA":
-                                                print("Felicidades esta es la pista sobre la palabra a adivinar: ")
+                                                print("Felicidades esta es la pista sobre la palabra a adivinar: En el vasto lienzo del universo, existe un pintor que desafía la simetría, revelando que no todos los caminos de la luz son iguales. Con sus pinceladas, muestra diferencias en cada dirección, creando un cosmos lleno de sutiles variaciones. ")
                                         else:
                                             print("Respuesta incorrecta, el juego continua")
                                             time.sleep(2)
@@ -416,7 +416,7 @@ while salir==False:     #mientras "salir" sea "False", va a repetir
                                                     "Felicidades esta es la simple pista sobre la palabra a adivinar: Se refiere a un lugar o tratamiento relacionado con la salud mental..")
                                             elif palabra == "CRONOLOGIA":
                                                 print(
-                                                    "Felicidades esta el la simple pista sobre la palabra a adivinar: Se refiere a un lugar o tratamiento relacionado con la salud mental..")
+                                                    "Felicidades esta el la simple pista sobre la palabra a adivinar: Es el orden de los eventos en el tiempo.")
 
                                         else:
                                             print("Respuesta incorrecta, el juego continua")
